@@ -1,0 +1,26 @@
+.article {
+  display: flex;
+}
+
+@media screen and (max-width: 992px) {
+  .article {
+    flex-wrap: wrap;
+  }
+}
+
+.preview {
+  margin-right: 24px;
+}
+
+.imageWrapper {
+  position: relative;
+}
+
+.time {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px 10px;
+  background-color: #000;
+  color: #fff;
+}
