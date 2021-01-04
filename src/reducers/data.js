@@ -2,7 +2,7 @@ import {
   RECEIVE_API_DETAILS,
   RECEIVE_API_EPISODES,
   RECEIVE_API_EPISODE_DETAILS,
-} from '../actions';
+} from '../actions/actions';
 
 export default (state = {}, { type, data }) => {
   switch (type) {

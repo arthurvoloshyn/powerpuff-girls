@@ -5,8 +5,8 @@ import { useParams } from 'react-router-dom';
 import { Details } from '../../components/details';
 import { Episodes } from '../../components/episodes';
 
-import { requestApiDetails, requestApiEpisodes } from '../../actions';
-import { selectDetails, selectEpisodes } from '../../shared/selectors';
+import { requestApiDetails, requestApiEpisodes } from '../../../actions/actions';
+import { selectDetails, selectEpisodes } from '../../../shared/selectors';
 
 export const DetailPage = () => {
   const dispatch = useDispatch();

@@ -1,8 +1,8 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
-import reducer from './reducers';
-import rootSaga from './sagas';
+import reducer from '../reducers';
+import rootSaga from '../sagas/sagas';
 
 const composeEnhancers = process.env.NODE_ENV !== 'production'
   && typeof window === 'object'

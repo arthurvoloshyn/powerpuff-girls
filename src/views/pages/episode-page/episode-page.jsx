@@ -5,8 +5,8 @@ import { useParams } from 'react-router-dom';
 
 import { Details } from '../../components/details';
 
-import { requestApiEpisodeDetails } from '../../actions';
-import { selectEpisodeDetails } from '../../shared/selectors';
+import { requestApiEpisodeDetails } from '../../../actions/actions';
+import { selectEpisodeDetails } from '../../../shared/selectors';
 
 import styles from './episode-page.module.css';
 

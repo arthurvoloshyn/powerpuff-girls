@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-import store from './store';
+import store from './store/store';
 import { App } from './App';
-import { HomePage } from './pages/home-page';
-import { DetailPage } from './pages/detail-page';
-import { EpisodePage } from './pages/episode-page';
-import { ErrorPage } from './pages/error-page';
+import { HomePage } from './views/pages/home-page';
+import { DetailPage } from './views/pages/detail-page';
+import { EpisodePage } from './views/pages/episode-page';
+import { ErrorPage } from './views/pages/error-page';
 
 import './index.css';
 

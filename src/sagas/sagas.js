@@ -12,12 +12,12 @@ import {
   receiveApiDetails,
   receiveApiEpisodes,
   receiveApiEpisodeDetails,
-} from './actions';
+} from '../actions/actions';
 import {
   fetchDetails,
   fetchShowEpisodes,
   fetchEpisodeDetails,
-} from './api';
+} from '../utils/api';
 
 function* getShowDetails({ showId }) {
   try {

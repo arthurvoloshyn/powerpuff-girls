@@ -3,9 +3,9 @@ import createSagaMiddleware from 'redux-saga';
 
 import { DetailPage } from './detail-page';
 
-import { renderWithRouterMatch } from '../../shared/utils';
+import { renderWithRouterMatch } from '../../../shared/utils';
 
-import * as actions from '../../actions';
+import * as actions from '../../../actions/actions';
 actions.requestApiDetails = jest.fn();
 actions.requestApiEpisodes = jest.fn();
 

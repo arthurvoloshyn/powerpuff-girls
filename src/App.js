@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
-import { Header } from './layout/header';
-import { Footer } from './layout/footer';
+import { Header } from './views/layout/header';
+import { Footer } from './views/layout/footer';
 
 export const App = ({ children }) => (
   <>
