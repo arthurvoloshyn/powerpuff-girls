@@ -8,11 +8,12 @@ import { renderWithRouterMatch } from '../../../shared/utils';
 import { EpisodePage } from './episode-page';
 
 import * as actions from '../../../actions/actions';
+
 actions.requestApiEpisodeDetails = jest.fn();
 
 const middlewares = [createSagaMiddleware];
 
-describe("EpisodePage component", () => {
+describe('EpisodePage component', () => {
   const initialState = { episodeDetails: {} };
   const mockStore = configureStore(middlewares);
   const store = mockStore(initialState);
@@ -21,18 +22,22 @@ describe("EpisodePage component", () => {
 
   beforeEach(() => {
     history.goBack = jest.fn();
-    renderWithRouterMatch(EpisodePage, {
-      route,
-      path: '/:showId/shows/:episodeId/episode/:season/:number',
-      history,
-    }, store);
+    renderWithRouterMatch(
+      EpisodePage,
+      {
+        route,
+        path: '/:showId/shows/:episodeId/episode/:season/:number',
+        history,
+      },
+      store,
+    );
   });
 
-  it('is expected to call reques data with correct arguments', () => {
+  it('is expected to call request data with correct arguments', () => {
     expect(actions.requestApiEpisodeDetails).toHaveBeenCalledWith('6771', '1', '1');
   });
 
-  it('is expected to call reques data with correct arguments', () => {
+  it('is expected to go back', () => {
     fireEvent.click(screen.getByText(/Back/i));
     expect(history.goBack).toHaveBeenCalled();
   });

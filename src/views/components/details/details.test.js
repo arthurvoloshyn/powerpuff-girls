@@ -11,7 +11,7 @@ const DETAILS = {
   },
 };
 
-describe("Details component", () => {
+describe('Details component', () => {
   it('is expected to render details with empty data', () => {
     render(<Details />);
     expect(screen.getByText(/Empty name/i)).toBeInTheDocument();

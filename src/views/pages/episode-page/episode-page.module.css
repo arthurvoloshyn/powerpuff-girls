@@ -5,12 +5,12 @@
 .backBtn {
   background-color: #d43728;
   border: none;
+  border-radius: 3px;
   color: #fff;
-  text-transform: uppercase;
+  cursor: pointer;
   min-height: 30px;
   min-width: 100px;
-  border-radius: 3px;
-  cursor: pointer;
+  text-transform: uppercase;
 }
 
 .backBtn:hover {

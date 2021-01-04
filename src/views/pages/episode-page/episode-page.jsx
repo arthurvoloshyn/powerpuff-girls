@@ -20,7 +20,7 @@ export const EpisodePage = ({ history }) => {
     if (showId && number && season) {
       dispatch(requestApiEpisodeDetails(showId, season, number));
     }
-  }, [showId, number, season]);
+  }, [showId, number, season, dispatch]);
 
   const handleGoBack = () => {
     history.goBack();
@@ -29,7 +29,9 @@ export const EpisodePage = ({ history }) => {
   return (
     <section>
       <div className={styles.navigation}>
-        <button type="button" onClick={handleGoBack} className={styles.backBtn}>Back</button>
+        <button className={styles.backBtn} onClick={handleGoBack} type="button">
+          Back
+        </button>
       </div>
       <Details details={episodeDetails} />
     </section>

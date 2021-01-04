@@ -18,10 +18,14 @@ ReactDOM.render(
       <Provider store={store}>
         <App>
           <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/:showId/shows/" component={DetailPage} />
-            <Route exact path="/:showId/shows/:episodeId/episode/:season/:number/" component={EpisodePage} />
-            <Route path="*" component={ErrorPage} />
+            <Route component={HomePage} exact path="/" />
+            <Route component={DetailPage} exact path="/:showId/shows/" />
+            <Route
+              component={EpisodePage}
+              exact
+              path="/:showId/shows/:episodeId/episode/:season/:number/"
+            />
+            <Route component={ErrorPage} path="*" />
           </Switch>
         </App>
       </Provider>

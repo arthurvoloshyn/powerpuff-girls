@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import { Router } from "react-router-dom";
-import { createMemoryHistory } from "history";
+import { Router } from 'react-router-dom';
+import { createMemoryHistory } from 'history';
 
 import { Episodes } from './episodes';
 
@@ -9,7 +9,7 @@ const EPISODES = [
   { id: 2, name: 'name2', season: 2, number: 2 },
 ];
 
-describe("Episodes component", () => {
+describe('Episodes component', () => {
   it('is expected to render empty string', () => {
     render(<Episodes />);
     expect(screen.getByText(/Sorry, There are no episodes/i)).toBeInTheDocument();
@@ -21,7 +21,7 @@ describe("Episodes component", () => {
       render(
         <Router history={history}>
           <Episodes episodes={EPISODES} />
-        </Router>
+        </Router>,
       );
     });
 

@@ -12,12 +12,7 @@ export const Episodes = ({ episodes }) => {
     <>
       <h3 className={styles.title}>All Episodes:</h3>
       <ul className={styles.episodesList}>
-        {episodes.map(({
-          id,
-          name,
-          season,
-          number,
-        }) => (
+        {episodes.map(({ id, name, season, number }) => (
           <li key={id} data-testid="episode">
             <Link to={`${id}/episode/${season}/${number}`}>{name}</Link>
           </li>
@@ -28,12 +23,14 @@ export const Episodes = ({ episodes }) => {
 };
 
 Episodes.propTypes = {
-  episodes: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
-    name: PropTypes.string,
-    season: PropTypes.number,
-    number: PropTypes.number,
-  })),
+  episodes: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string,
+      season: PropTypes.number,
+      number: PropTypes.number,
+    }),
+  ),
 };
 
 Episodes.defaultProps = {

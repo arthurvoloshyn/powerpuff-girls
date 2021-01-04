@@ -1,12 +1,28 @@
 {
+  "homepage": "https://ArturW1998.github.io/powerpuff-girls",
   "name": "powerpuff-girl",
   "version": "0.1.0",
   "private": true,
+  "description": "Simple React Powerpuff Girls Application",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ArturW1998/powerpuff-girls"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "redux",
+    "redux-saga",
+    "jest",
+    "testing-library",
+    "react-testing-library"
+  ],
+  "author": "Artur Voloshyn (https://github.com/arturw1998)",
+  "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "eslint-config-airbnb": "^18.2.1",
     "history": "^5.0.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
@@ -25,8 +41,47 @@
     "test": "react-scripts test",
     "test:ci": "npm test -- --watchAll=false",
     "test:ci:coverage": "npm run test:ci -- --coverage",
+    "test:update": "npm test -- -u",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.js"
+    "lint": "eslint --ext .js,.jsx ./src",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "lint:styles": "stylelint --syntax css src/**/*.css",
+    "lint:fix": "npm run lint -- --fix",
+    "lint:styles:fix": "npm run lint:styles -- --fix",
+    "format": "prettier \"src/**/*.{js,jsx,yml,yaml,ts,tsx,md,graphql,mdx}\" --write",
+    "format:styles": "prettier \"src/**/*.css\" --parser css --write",
+    "validate": "npm run lint && npm run lint:styles && npm run build",
+    "precommit": "lint-staged"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-react-app": "^5.2.1",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-flowtype": "^3.13.0",
+    "eslint-plugin-jest": "^23.20.0",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "gh-pages": "^3.1.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1",
+    "stylelint": "^12.0.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-order": "^3.1.1",
+    "stylelint-prettier": "^1.1.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
   },
   "eslintConfig": {
     "extends": [

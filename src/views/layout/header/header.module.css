@@ -1,42 +1,42 @@
 .header {
-  min-height: 100px;
-  background-color: #d43728;
-  display: flex;
   align-items: stretch;
-  justify-content: flex-end;
-  padding: 0 50px;
+  background-color: #d43728;
   box-shadow: 1px 1px 10px #777;
+  display: flex;
+  justify-content: flex-end;
+  min-height: 100px;
+  padding: 0 50px;
 }
 
 @media screen and (max-width: 992px) {
   .header {
-    padding: 0 24px;
     justify-content: center;
+    padding: 0 24px;
   }
 }
 
 .nav {
+  align-items: stretch;
+  display: flex;
+  height: 100%;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  align-items: stretch;
-  height: 100%;
 }
 
 .nav li {
-  display: flex;
   align-items: center;
+  display: flex;
 }
 
 .nav a {
+  align-items: center;
   color: #fff;
-  text-decoration: none;
   display: flex;
   height: 100%;
-  width: 100%;
-  align-items: center;
   padding: 0 20px;
+  text-decoration: none;
+  width: 100%;
 }
 
 .nav a:hover,

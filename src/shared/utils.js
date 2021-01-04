@@ -5,17 +5,13 @@ import { Provider } from 'react-redux';
 
 export const renderWithRouterMatch = (
   ui,
-  {
-    path = '/',
-    route = '/',
-    history = createMemoryHistory({ initialEntries: [route] }),
-  } = {},
+  { path = '/', route = '/', history = createMemoryHistory({ initialEntries: [route] }) } = {},
   store = {},
 ) => ({
   ...render(
     <Provider store={store}>
       <Router history={history}>
-        <Route path={path} component={ui} />
+        <Route component={ui} path={path} />
       </Router>
     </Provider>,
   ),

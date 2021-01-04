@@ -1,31 +1,14 @@
-const API = 'http://api.tvmaze.com/shows/';
+import API_PATHS from '../constants/apiPaths';
+import getApiInstance from './getApiInstance';
 
-export const fetchDetails = async showId => {
-  try {
-    const response = await fetch(`${API}${showId}`);
-    const data = await response.json();
-    return data;
-  } catch (e) {
-    console.log(e);
-  }
-};
+const { BASE_PATH, EPISODES_PATH, EPISODES_BY_NUMBER_PATH, SEASON_PARAM, NUMBER_PARAM } = API_PATHS;
 
-export const fetchShowEpisodes = async showId => {
-  try {
-    const response = await fetch(`${API}${showId}/episodes`);
-    const data = await response.json();
-    return data;
-  } catch (e) {
-    console.log(e);
-  }
-};
-
-export const fetchEpisodeDetails = async (showId, season, number) => {
-  try {
-    const response = await fetch(`${API}${showId}/episodebynumber?season=${season}&number=${number}`);
-    const data = await response.json();
-    return data;
-  } catch (e) {
-    console.log(e);
-  }
-};
+/* eslint-disable max-len */
+export const fetchDetails = showId => getApiInstance(`${BASE_PATH}/${showId}`);
+export const fetchShowEpisodes = showId =>
+  getApiInstance(`${BASE_PATH}/${showId}/${EPISODES_PATH}`);
+export const fetchEpisodeDetails = (showId, season, number) =>
+  getApiInstance(
+    `${BASE_PATH}/${showId}/${EPISODES_BY_NUMBER_PATH}?${SEASON_PARAM}${season}&${NUMBER_PARAM}${number}`,
+  );
+/* eslint-enable */

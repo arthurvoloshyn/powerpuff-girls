@@ -1,9 +1,4 @@
-import {
-  call,
-  put,
-  takeLatest,
-  all,
-} from 'redux-saga/effects';
+import { call, put, takeLatest, all } from 'redux-saga/effects';
 
 import {
   REQUEST_API_DETAILS,
@@ -12,19 +7,16 @@ import {
   receiveApiDetails,
   receiveApiEpisodes,
   receiveApiEpisodeDetails,
+  receiveApiFailure,
 } from '../actions/actions';
-import {
-  fetchDetails,
-  fetchShowEpisodes,
-  fetchEpisodeDetails,
-} from '../utils/api';
+import { fetchDetails, fetchShowEpisodes, fetchEpisodeDetails } from '../utils/api';
 
 function* getShowDetails({ showId }) {
   try {
     const data = yield call(fetchDetails, showId);
     yield put(receiveApiDetails(data));
   } catch (e) {
-    console.log(e);
+    yield put(receiveApiFailure(e));
   }
 }
 
@@ -33,7 +25,7 @@ function* getShowEpisodes({ showId }) {
     const data = yield call(fetchShowEpisodes, showId);
     yield put(receiveApiEpisodes(data));
   } catch (e) {
-    console.log(e);
+    yield put(receiveApiFailure(e));
   }
 }
 
@@ -42,7 +34,7 @@ function* getEpisodeDetails({ showId, season, number }) {
     const data = yield call(fetchEpisodeDetails, showId, season, number);
     yield put(receiveApiEpisodeDetails(data));
   } catch (e) {
-    console.log(e);
+    yield put(receiveApiFailure(e));
   }
 }
 

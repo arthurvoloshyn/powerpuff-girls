@@ -6,22 +6,27 @@ import { DetailPage } from './detail-page';
 import { renderWithRouterMatch } from '../../../shared/utils';
 
 import * as actions from '../../../actions/actions';
+
 actions.requestApiDetails = jest.fn();
 actions.requestApiEpisodes = jest.fn();
 
 const middlewares = [createSagaMiddleware];
 
-describe("DetailPage component", () => {
+describe('DetailPage component', () => {
   const initialState = { details: {}, episodes: {} };
   const mockStore = configureStore(middlewares);
   let store;
 
   it('is expected to request data with correct arguments', () => {
-    store = mockStore(initialState)
-    renderWithRouterMatch(DetailPage, {
-      route: '/6771/shows/',
-      path: '/:showId/shows/',
-    }, store);
+    store = mockStore(initialState);
+    renderWithRouterMatch(
+      DetailPage,
+      {
+        route: '/6771/shows/',
+        path: '/:showId/shows/',
+      },
+      store,
+    );
     expect(actions.requestApiDetails).toHaveBeenCalledWith('6771');
     expect(actions.requestApiEpisodes).toHaveBeenCalledWith('6771');
   });

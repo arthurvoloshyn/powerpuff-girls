@@ -20,7 +20,7 @@ export const DetailPage = () => {
       dispatch(requestApiDetails(showId));
       dispatch(requestApiEpisodes(showId));
     }
-  }, [showId]);
+  }, [dispatch, showId]);
 
   return (
     <section>

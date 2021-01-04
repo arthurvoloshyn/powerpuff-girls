@@ -6,9 +6,7 @@ import { Footer } from './views/layout/footer';
 export const App = ({ children }) => (
   <>
     <Header />
-    <main>
-      {children}
-    </main>
+    <main>{children}</main>
     <Footer />
   </>
 );
