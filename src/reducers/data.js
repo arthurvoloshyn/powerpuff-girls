@@ -3,7 +3,7 @@ import {
   RECEIVE_API_EPISODES,
   RECEIVE_API_EPISODE_DETAILS,
   RECEIVE_API_FAILURE,
-} from '../actions/actions';
+} from '../constants/actionTypes';
 
 export default (state = {}, { type, data, errorMsg }) => {
   switch (type) {

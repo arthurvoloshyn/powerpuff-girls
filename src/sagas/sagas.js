@@ -4,6 +4,8 @@ import {
   REQUEST_API_DETAILS,
   REQUEST_API_EPISODES,
   REQUEST_API_EPISODE_DETAILS,
+} from '../constants/actionTypes';
+import {
   receiveApiDetails,
   receiveApiEpisodes,
   receiveApiEpisodeDetails,
