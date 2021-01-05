@@ -5,8 +5,18 @@ import { createMemoryHistory } from 'history';
 import { Episodes } from './episodes';
 
 const EPISODES = [
-  { id: 1, name: 'name1', season: 1, number: 1 },
-  { id: 2, name: 'name2', season: 2, number: 2 },
+  {
+    id: 1,
+    name: 'name1',
+    season: 1,
+    number: 1,
+  },
+  {
+    id: 2,
+    name: 'name2',
+    season: 2,
+    number: 2,
+  },
 ];
 
 describe('Episodes component', () => {

@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import React, { StrictMode } from 'react';
+import { render } from 'react-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import store from './store/store';
@@ -12,9 +12,9 @@ import { ErrorPage } from './views/pages/error-page';
 
 import './index.css';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
+render(
+  <StrictMode>
+    <HashRouter>
       <Provider store={store}>
         <App>
           <Switch>
@@ -29,7 +29,7 @@ ReactDOM.render(
           </Switch>
         </App>
       </Provider>
-    </BrowserRouter>
-  </React.StrictMode>,
+    </HashRouter>
+  </StrictMode>,
   document.getElementById('root'),
 );
