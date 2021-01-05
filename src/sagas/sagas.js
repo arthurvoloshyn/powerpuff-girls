@@ -11,7 +11,7 @@ import {
   receiveApiEpisodeDetails,
   receiveApiFailure,
 } from '../actions/actions';
-import { fetchDetails, fetchShowEpisodes, fetchEpisodeDetails } from '../utils/api';
+import { fetchDetails, fetchShowEpisodes, fetchEpisodeDetails } from '../shared/api';
 
 function* getShowDetails({ showId }) {
   try {

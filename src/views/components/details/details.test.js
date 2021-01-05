@@ -3,7 +3,7 @@ import { Details } from './details';
 
 const DETAILS = {
   name: 'Test name',
-  airdate: 'test data',
+  airdate: 'Test data',
   premiered: '',
   summary: 'Test description',
   image: {
@@ -12,17 +12,39 @@ const DETAILS = {
 };
 
 describe('Details component', () => {
-  it('is expected to render details with empty data', () => {
-    render(<Details />);
-    expect(screen.getByText(/Empty name/i)).toBeInTheDocument();
-    expect(screen.getByText(/No description/i)).toBeInTheDocument();
-    expect(screen.getByAltText(/Empty name/i)).toBeInTheDocument();
+  describe('is expected to render details with empty data', () => {
+    beforeEach(() => {
+      render(<Details />);
+    });
+
+    it('details name', () => {
+      expect(screen.getByText(/Empty name/i)).toBeInTheDocument();
+    });
+
+    it('details description', () => {
+      expect(screen.getByText(/No description/i)).toBeInTheDocument();
+    });
+
+    it('details image alternate text', () => {
+      expect(screen.getByAltText(/Empty name/i)).toBeInTheDocument();
+    });
   });
 
-  it('is expected to render passed data', () => {
-    render(<Details details={DETAILS} />);
-    expect(screen.getByText(/Test name/i)).toBeInTheDocument();
-    expect(screen.getByText(/test data/i)).toBeInTheDocument();
-    expect(screen.getByText(/Test description/i)).toBeInTheDocument();
+  describe('is expected to render transmitted data', () => {
+    beforeEach(() => {
+      render(<Details details={DETAILS} />);
+    });
+
+    it('details name', () => {
+      expect(screen.getByText(/Test name/i)).toBeInTheDocument();
+    });
+
+    it('details air date', () => {
+      expect(screen.getByText(/Test data/i)).toBeInTheDocument();
+    });
+
+    it('details description', () => {
+      expect(screen.getByText(/Test description/i)).toBeInTheDocument();
+    });
   });
 });

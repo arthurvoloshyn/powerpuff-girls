@@ -37,7 +37,7 @@ describe('EpisodePage component', () => {
     expect(actions.requestApiEpisodeDetails).toHaveBeenCalledWith('6771', '1', '1');
   });
 
-  it('is expected to go back', () => {
+  it('is expected to go back after clicking the Back button', () => {
     fireEvent.click(screen.getByText(/Back/i));
     expect(history.goBack).toHaveBeenCalled();
   });

@@ -20,9 +20,9 @@ const EPISODES = [
 ];
 
 describe('Episodes component', () => {
-  it('is expected to render empty string', () => {
+  it('is expected to render an empty string', () => {
     render(<Episodes />);
-    expect(screen.getByText(/Sorry, There are no episodes/i)).toBeInTheDocument();
+    expect(screen.getByText(/Sorry, no episodes.../i)).toBeInTheDocument();
   });
 
   describe('with data', () => {
@@ -39,9 +39,14 @@ describe('Episodes component', () => {
       expect(screen.getAllByTestId('episode')).toHaveLength(2);
     });
 
-    it('is expected to rebder links with correct path', () => {
-      expect(screen.getAllByRole('link')[0]).toHaveAttribute('href', '/1/episode/1/1');
-      expect(screen.getAllByRole('link')[1]).toHaveAttribute('href', '/2/episode/2/2');
+    describe('is expected to render links with the correct path', () => {
+      it('/1/episode/1/1 path', () => {
+        expect(screen.getAllByRole('link')[0]).toHaveAttribute('href', '/1/episode/1/1');
+      });
+
+      it('/2/episode/2/2 path', () => {
+        expect(screen.getAllByRole('link')[1]).toHaveAttribute('href', '/2/episode/2/2');
+      });
     });
   });
 });

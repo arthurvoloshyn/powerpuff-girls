@@ -17,24 +17,40 @@ describe('DetailPage component', () => {
   const mockStore = configureStore(middlewares);
   let store;
 
-  it('is expected to request data with correct arguments', () => {
-    store = mockStore(initialState);
-    renderWithRouterMatch(
-      DetailPage,
-      {
-        route: '/6771/shows/',
-        path: '/:showId/shows/',
-      },
-      store,
-    );
-    expect(actions.requestApiDetails).toHaveBeenCalledWith('6771');
-    expect(actions.requestApiEpisodes).toHaveBeenCalledWith('6771');
+  describe('is expected to request data with correct arguments', () => {
+    beforeEach(() => {
+      store = mockStore(initialState);
+      renderWithRouterMatch(
+        DetailPage,
+        {
+          route: '/6771/shows/',
+          path: '/:showId/shows/',
+        },
+        store,
+      );
+    });
+
+    it('requestApiDetails request', () => {
+      expect(actions.requestApiDetails).toHaveBeenCalledWith('6771');
+    });
+
+    it('requestApiEpisodes request', () => {
+      expect(actions.requestApiEpisodes).toHaveBeenCalledWith('6771');
+    });
   });
 
-  it('is expected to not request data if showId is not exist in route', () => {
-    store = mockStore(initialState);
-    renderWithRouterMatch(DetailPage, {}, store);
-    expect(actions.requestApiDetails).not.toHaveBeenCalled();
-    expect(actions.requestApiEpisodes).not.toHaveBeenCalled();
+  describe('is expected to not request data if showId is not existed in the route', () => {
+    beforeEach(() => {
+      store = mockStore(initialState);
+      renderWithRouterMatch(DetailPage, {}, store);
+    });
+
+    it('requestApiDetails request', () => {
+      expect(actions.requestApiDetails).not.toHaveBeenCalled();
+    });
+
+    it('requestApiEpisodes request', () => {
+      expect(actions.requestApiEpisodes).not.toHaveBeenCalled();
+    });
   });
 });

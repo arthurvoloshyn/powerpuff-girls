@@ -1,5 +1,5 @@
 import API_PATHS from '../constants/apiPaths';
-import getApiInstance from './getApiInstance';
+import { getApiInstance } from './utils';
 
 const { BASE_PATH, EPISODES_PATH, EPISODES_BY_NUMBER_PATH, SEASON_PARAM, NUMBER_PARAM } = API_PATHS;
 

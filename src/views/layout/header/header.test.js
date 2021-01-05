@@ -5,14 +5,22 @@ import { createMemoryHistory } from 'history';
 import { Header } from './header';
 
 describe('Header component', () => {
-  it('is expected to render navigation links', () => {
-    const history = createMemoryHistory();
-    render(
-      <Router history={history}>
-        <Header />
-      </Router>,
-    );
-    expect(screen.getByText(/Home/i)).toBeInTheDocument();
-    expect(screen.getByText(/Powerpuff Girls/i)).toBeInTheDocument();
+  describe('is expected to render navigation links', () => {
+    beforeEach(() => {
+      const history = createMemoryHistory();
+      render(
+        <Router history={history}>
+          <Header />
+        </Router>,
+      );
+    });
+
+    it('Home navigation link', () => {
+      expect(screen.getByText(/Home/i)).toBeInTheDocument();
+    });
+
+    it('Powerpuff Girls navigation link', () => {
+      expect(screen.getByText(/Powerpuff Girls/i)).toBeInTheDocument();
+    });
   });
 });
