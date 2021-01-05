@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 
 import * as serviceWorker from './serviceWorker';
 import reportWebVitals from './reportWebVitals';
+import ENV from './constants/environment';
 import store from './store/store';
 import { App } from './App';
 import { HomePage } from './views/pages/home-page';
@@ -39,4 +40,4 @@ render(
 serviceWorker.register();
 
 /* eslint-disable-next-line no-console */
-process.env.NODE_ENV !== 'production' && reportWebVitals(console.log);
+!ENV.PROD && reportWebVitals(console.log);
