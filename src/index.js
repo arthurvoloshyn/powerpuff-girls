@@ -3,6 +3,8 @@ import { render } from 'react-dom';
 import { HashRouter, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
+import * as serviceWorker from './serviceWorker';
+import reportWebVitals from './reportWebVitals';
 import store from './store/store';
 import { App } from './App';
 import { HomePage } from './views/pages/home-page';
@@ -25,7 +27,7 @@ render(
               exact
               path="/:showId/shows/:episodeId/episode/:season/:number/"
             />
-            <Route component={ErrorPage} path="*" />
+            <Route component={ErrorPage} />
           </Switch>
         </App>
       </Provider>
@@ -33,3 +35,8 @@ render(
   </StrictMode>,
   document.getElementById('root'),
 );
+
+serviceWorker.register();
+
+/* eslint-disable-next-line no-console */
+process.env.NODE_ENV !== 'production' && reportWebVitals(console.log);
