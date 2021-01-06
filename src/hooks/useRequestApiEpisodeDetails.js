@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from 'react';
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
@@ -8,16 +8,9 @@ const useRequestApiEpisodeDetails = () => {
   const dispatch = useDispatch();
   const { showId, season, number } = useParams();
 
-  const requestApi = useCallback(
-    () => showId && number && season && dispatch(requestApiEpisodeDetails(showId, season, number)),
-    [dispatch, number, season, showId],
-  );
-
   useEffect(() => {
-    requestApi();
-  }, [requestApi]);
-
-  return requestApi;
+    showId && number && season && dispatch(requestApiEpisodeDetails(showId, season, number));
+  }, [dispatch, number, season, showId]);
 };
 
 export default useRequestApiEpisodeDetails;
