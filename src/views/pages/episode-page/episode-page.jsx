@@ -17,14 +17,10 @@ export const EpisodePage = ({ history }) => {
   const episodeDetails = useSelector(selectEpisodeDetails);
 
   useEffect(() => {
-    if (showId && number && season) {
-      dispatch(requestApiEpisodeDetails(showId, season, number));
-    }
+    showId && number && season && dispatch(requestApiEpisodeDetails(showId, season, number));
   }, [showId, number, season, dispatch]);
 
-  const handleGoBack = () => {
-    history.goBack();
-  };
+  const handleGoBack = () => history.goBack();
 
   return (
     <section>
