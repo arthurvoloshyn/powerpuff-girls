@@ -3,7 +3,6 @@ import { render } from 'react-dom';
 import { HashRouter, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-import * as serviceWorker from './serviceWorker';
 import reportWebVitals from './reportWebVitals';
 import ENV from './constants/environment';
 import store from './store/store';
@@ -36,8 +35,6 @@ render(
   </StrictMode>,
   document.getElementById('root'),
 );
-
-serviceWorker.register();
 
 /* eslint-disable-next-line no-console */
 !ENV.PROD && reportWebVitals(console.log);
