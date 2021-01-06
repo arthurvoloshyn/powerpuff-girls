@@ -1,24 +1,17 @@
-import { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import { Details } from '../../components/details';
 
-import { requestApiEpisodeDetails } from '../../../actions/actions';
 import { selectEpisodeDetails } from '../../../shared/selectors';
+import useRequestApiEpisodeDetails from '../../../hooks/useRequestApiEpisodeDetails';
 
 import styles from './episode-page.module.css';
 
 export const EpisodePage = ({ history }) => {
-  const dispatch = useDispatch();
-  const { showId, season, number } = useParams();
+  useRequestApiEpisodeDetails();
 
   const episodeDetails = useSelector(selectEpisodeDetails);
-
-  useEffect(() => {
-    showId && number && season && dispatch(requestApiEpisodeDetails(showId, season, number));
-  }, [showId, number, season, dispatch]);
 
   const handleGoBack = () => history.goBack();
 

@@ -1,26 +1,19 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import { Details } from '../../components/details';
 import { Episodes } from '../../components/episodes';
 
-import { requestApiDetails, requestApiEpisodes } from '../../../actions/actions';
-import { selectDetails, selectEpisodes } from '../../../shared/selectors';
+import { selectDetails, selectEpisodes, selectErrorMsg } from '../../../shared/selectors';
+import useRequestApiDetailsAndEpisodes from '../../../hooks/useRequestApiDetailsAndEpisodes';
 
 export const DetailPage = () => {
-  const dispatch = useDispatch();
-  const { showId } = useParams();
+  useRequestApiDetailsAndEpisodes();
 
   const details = useSelector(selectDetails);
   const episodes = useSelector(selectEpisodes);
+  const errorMsg = useSelector(selectErrorMsg);
 
-  useEffect(() => {
-    if (showId) {
-      dispatch(requestApiDetails(showId));
-      dispatch(requestApiEpisodes(showId));
-    }
-  }, [dispatch, showId]);
+  if (errorMsg) return <div>Error</div>;
 
   return (
     <section>
