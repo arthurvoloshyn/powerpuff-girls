@@ -1,5 +1,5 @@
 const API_PATHS = {
-  BASE_PATH: 'http://api.tvmaze.com/shows',
+  BASE_PATH: 'https://api.tvmaze.com/shows',
   EPISODES_PATH: '/episodes',
   EPISODES_BY_NUMBER_PATH: '/episodebynumber',
   SEASON_PARAM: 'season=',

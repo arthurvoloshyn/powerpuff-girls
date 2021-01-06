@@ -11,6 +11,7 @@
   "keywords": [
     "react",
     "reactjs",
+    "react-router",
     "redux",
     "redux-saga",
     "jest",
