@@ -13,7 +13,7 @@ actions.requestApiEpisodes = jest.fn();
 const middlewares = [createSagaMiddleware];
 
 describe('DetailPage component', () => {
-  const initialState = { details: {}, episodes: {} };
+  const initialState = { details: {}, episodes: [] };
   const mockStore = configureStore(middlewares);
   let store;
 
