@@ -1,11 +1,9 @@
 import configureStore from 'redux-mock-store';
 import createSagaMiddleware from 'redux-saga';
 
-import { DetailPage } from './detail-page';
-
-import { renderWithRouterMatch } from '../../../shared/utils';
-
 import * as actions from '../../../actions/actions';
+import { renderWithRouterMatch } from '../../../shared/utils';
+import { DetailPage } from './detail-page';
 
 actions.requestApiDetails = jest.fn();
 actions.requestApiEpisodes = jest.fn();

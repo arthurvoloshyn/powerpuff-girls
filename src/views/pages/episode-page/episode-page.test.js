@@ -3,11 +3,9 @@ import { createMemoryHistory } from 'history';
 import configureStore from 'redux-mock-store';
 import createSagaMiddleware from 'redux-saga';
 
-import { renderWithRouterMatch } from '../../../shared/utils';
-
-import { EpisodePage } from './episode-page';
-
 import * as actions from '../../../actions/actions';
+import { renderWithRouterMatch } from '../../../shared/utils';
+import { EpisodePage } from './episode-page';
 
 actions.requestApiEpisodeDetails = jest.fn();
 

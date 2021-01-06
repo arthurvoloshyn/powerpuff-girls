@@ -1,10 +1,9 @@
 import { useSelector } from 'react-redux';
 
-import { Details } from '../../components/details';
-import { Episodes } from '../../components/episodes';
-
 import { selectDetails, selectEpisodes } from '../../../shared/selectors';
 import useRequestApiDetailsAndEpisodes from '../../../hooks/useRequestApiDetailsAndEpisodes';
+import { Details } from '../../components/details';
+import { Episodes } from '../../components/episodes';
 
 export const DetailPage = () => {
   useRequestApiDetailsAndEpisodes();

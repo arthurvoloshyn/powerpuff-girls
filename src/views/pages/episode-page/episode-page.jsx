@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 
-import { Details } from '../../components/details';
-
 import { selectEpisodeDetails } from '../../../shared/selectors';
 import useRequestApiEpisodeDetails from '../../../hooks/useRequestApiEpisodeDetails';
+import { Details } from '../../components/details';
 
 import styles from './episode-page.module.css';
 

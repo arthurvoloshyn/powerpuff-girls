@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Header } from './views/layout/header';
 import { Footer } from './views/layout/footer';
 
-export const App = ({ children }) => (
+const App = ({ children }) => (
   <>
     <Header />
     <main>{children}</main>
@@ -14,3 +14,5 @@ export const App = ({ children }) => (
 App.propTypes = {
   children: PropTypes.element.isRequired,
 };
+
+export default App;

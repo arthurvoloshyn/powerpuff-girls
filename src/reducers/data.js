@@ -10,7 +10,7 @@ const initialState = {
   episodeDetails: {},
 };
 
-export default (state = initialState, { type, data }) => {
+const dataReducer = (state = initialState, { type, data }) => {
   switch (type) {
     case RECEIVE_API_DETAILS:
       return {
@@ -31,3 +31,5 @@ export default (state = initialState, { type, data }) => {
       return state;
   }
 };
+
+export default dataReducer;

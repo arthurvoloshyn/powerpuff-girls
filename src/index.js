@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import reportWebVitals from './reportWebVitals';
 import ENV from './constants/environment';
 import store from './store/store';
-import { App } from './App';
+import App from './App';
 import { HomePage } from './views/pages/home-page';
 import { DetailPage } from './views/pages/detail-page';
 import { EpisodePage } from './views/pages/episode-page';

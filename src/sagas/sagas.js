@@ -41,10 +41,12 @@ function* getEpisodeDetails({ showId, season, number }) {
 }
 /* eslint-enable */
 
-export default function* rootSaga() {
+function* rootSaga() {
   yield all([
     takeLatest(REQUEST_API_DETAILS, getShowDetails),
     takeLatest(REQUEST_API_EPISODES, getShowEpisodes),
     takeLatest(REQUEST_API_EPISODE_DETAILS, getEpisodeDetails),
   ]);
 }
+
+export default rootSaga;
