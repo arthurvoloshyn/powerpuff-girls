@@ -2,17 +2,15 @@ import {
   RECEIVE_API_DETAILS,
   RECEIVE_API_EPISODES,
   RECEIVE_API_EPISODE_DETAILS,
-  RECEIVE_API_FAILURE,
 } from '../constants/actionTypes';
 
 const initialState = {
   details: {},
   episodes: [],
   episodeDetails: {},
-  errorMsg: null,
 };
 
-export default (state = initialState, { type, data, errorMsg }) => {
+export default (state = initialState, { type, data }) => {
   switch (type) {
     case RECEIVE_API_DETAILS:
       return {
@@ -28,11 +26,6 @@ export default (state = initialState, { type, data, errorMsg }) => {
       return {
         ...state,
         episodeDetails: data,
-      };
-    case RECEIVE_API_FAILURE:
-      return {
-        ...state,
-        errorMsg,
       };
     default:
       return state;

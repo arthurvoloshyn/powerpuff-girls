@@ -2,7 +2,6 @@ import {
   RECEIVE_API_DETAILS,
   RECEIVE_API_EPISODE_DETAILS,
   RECEIVE_API_EPISODES,
-  RECEIVE_API_FAILURE,
   REQUEST_API_DETAILS,
   REQUEST_API_EPISODE_DETAILS,
   REQUEST_API_EPISODES,
@@ -20,4 +19,3 @@ export const requestApiEpisodeDetails = (showId, season, number) => ({
   number,
 });
 export const receiveApiEpisodeDetails = data => ({ type: RECEIVE_API_EPISODE_DETAILS, data });
-export const receiveApiFailure = errorMsg => ({ type: RECEIVE_API_FAILURE, errorMsg });

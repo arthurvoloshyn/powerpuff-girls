@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 
-import styles from './error.module.css';
+import styles from './error-page.module.css';
 
-export const Error = ({ children }) => (
+export const ErrorPage = ({ children }) => (
   <div className={styles.wrapper}>
     <h1 className={styles.title}>Error Page</h1>
     <p>Something went wrong...</p>
@@ -10,10 +10,10 @@ export const Error = ({ children }) => (
   </div>
 );
 
-Error.propTypes = {
+ErrorPage.propTypes = {
   children: PropTypes.node,
 };
 
-Error.defaultProps = {
+ErrorPage.defaultProps = {
   children: null,
 };

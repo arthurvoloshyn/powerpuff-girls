@@ -9,16 +9,16 @@ import {
   receiveApiDetails,
   receiveApiEpisodes,
   receiveApiEpisodeDetails,
-  receiveApiFailure,
 } from '../actions/actions';
 import { fetchDetails, fetchShowEpisodes, fetchEpisodeDetails } from '../shared/api';
 
+/* eslint-disable no-console */
 function* getShowDetails({ showId }) {
   try {
     const data = yield call(fetchDetails, showId);
     yield put(receiveApiDetails(data));
   } catch (e) {
-    yield put(receiveApiFailure(e));
+    console.log(e);
   }
 }
 
@@ -27,7 +27,7 @@ function* getShowEpisodes({ showId }) {
     const data = yield call(fetchShowEpisodes, showId);
     yield put(receiveApiEpisodes(data));
   } catch (e) {
-    yield put(receiveApiFailure(e));
+    console.log(e);
   }
 }
 
@@ -36,9 +36,10 @@ function* getEpisodeDetails({ showId, season, number }) {
     const data = yield call(fetchEpisodeDetails, showId, season, number);
     yield put(receiveApiEpisodeDetails(data));
   } catch (e) {
-    yield put(receiveApiFailure(e));
+    console.log(e);
   }
 }
+/* eslint-enable */
 
 export default function* rootSaga() {
   yield all([
