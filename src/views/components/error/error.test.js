@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react';
-import { ErrorPage } from './error-page';
+import { Error } from './error';
 
 describe('ErrorPage component', () => {
   describe('is expected to render title and subtitle', () => {
     beforeEach(() => {
-      render(<ErrorPage />);
+      render(<Error />);
     });
 
     it('Error Page title', () => {

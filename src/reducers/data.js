@@ -5,14 +5,14 @@ import {
   RECEIVE_API_FAILURE,
 } from '../constants/actionTypes';
 
-const initState = {
+const initialState = {
   details: {},
   episodes: [],
   episodeDetails: {},
   errorMsg: null,
 };
 
-export default (state = initState, { type, data, errorMsg }) => {
+export default (state = initialState, { type, data, errorMsg }) => {
   switch (type) {
     case RECEIVE_API_DETAILS:
       return {

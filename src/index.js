@@ -11,7 +11,7 @@ import { App } from './App';
 import { HomePage } from './views/pages/home-page';
 import { DetailPage } from './views/pages/detail-page';
 import { EpisodePage } from './views/pages/episode-page';
-import { ErrorPage } from './views/pages/error-page';
+import { Error } from './views/components/error';
 
 import './index.css';
 
@@ -28,7 +28,7 @@ render(
               exact
               path="/:showId/shows/:episodeId/episode/:season/:number/"
             />
-            <Route component={ErrorPage} />
+            <Route component={Error} />
           </Switch>
         </App>
       </Provider>

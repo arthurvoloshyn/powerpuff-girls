@@ -11,6 +11,7 @@ import {
 export const requestApiDetails = showId => ({ type: REQUEST_API_DETAILS, showId });
 export const receiveApiDetails = data => ({ type: RECEIVE_API_DETAILS, data });
 export const requestApiEpisodes = showId => ({ type: REQUEST_API_EPISODES, showId });
+
 export const receiveApiEpisodes = data => ({ type: RECEIVE_API_EPISODES, data });
 export const requestApiEpisodeDetails = (showId, season, number) => ({
   type: REQUEST_API_EPISODE_DETAILS,
