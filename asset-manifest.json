@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/powerpuff-girls/static/css/main.8aec3086.chunk.css",
+    "main.js": "/powerpuff-girls/static/js/main.927a1748.chunk.js",
+    "main.js.map": "/powerpuff-girls/static/js/main.927a1748.chunk.js.map",
+    "runtime-main.js": "/powerpuff-girls/static/js/runtime-main.4227c071.js",
+    "runtime-main.js.map": "/powerpuff-girls/static/js/runtime-main.4227c071.js.map",
+    "static/js/2.7218d26c.chunk.js": "/powerpuff-girls/static/js/2.7218d26c.chunk.js",
+    "static/js/2.7218d26c.chunk.js.map": "/powerpuff-girls/static/js/2.7218d26c.chunk.js.map",
+    "static/js/3.add23809.chunk.js": "/powerpuff-girls/static/js/3.add23809.chunk.js",
+    "static/js/3.add23809.chunk.js.map": "/powerpuff-girls/static/js/3.add23809.chunk.js.map",
+    "index.html": "/powerpuff-girls/index.html",
+    "static/css/main.8aec3086.chunk.css.map": "/powerpuff-girls/static/css/main.8aec3086.chunk.css.map",
+    "static/js/2.7218d26c.chunk.js.LICENSE.txt": "/powerpuff-girls/static/js/2.7218d26c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4227c071.js",
+    "static/js/2.7218d26c.chunk.js",
+    "static/css/main.8aec3086.chunk.css",
+    "static/js/main.927a1748.chunk.js"
+  ]
+}
