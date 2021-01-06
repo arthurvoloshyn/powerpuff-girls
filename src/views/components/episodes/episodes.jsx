@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 import styles from './episodes.module.css';
 
 export const Episodes = ({ episodes }) => {
-  if (!episodes.length) {
-    return <h3>Sorry, no episodes...</h3>;
-  }
+  if (!episodes.length) return <h3>Sorry, no episodes...</h3>;
 
   return (
     <>

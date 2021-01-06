@@ -2,15 +2,15 @@ import PropTypes from 'prop-types';
 
 import styles from './details.module.css';
 
-export const Details = ({ details }) => (
+export const Details = ({ details: { name, image, airdate, premiered, summary } }) => (
   <article className={styles.article}>
     <div className={styles.imageWrapper}>
-      <img alt={details.name} className={styles.preview} src={details?.image?.medium} />
-      <time className={styles.time}>{details.airdate || details.premiered}</time>
+      <img alt={name} className={styles.preview} src={image?.medium} />
+      <time className={styles.time}>{airdate || premiered}</time>
     </div>
     <div className={styles.description}>
-      <h2>{details.name}</h2>
-      <div dangerouslySetInnerHTML={{ __html: details.summary }} />
+      <h2>{name}</h2>
+      <div dangerouslySetInnerHTML={{ __html: summary }} />
     </div>
   </article>
 );
