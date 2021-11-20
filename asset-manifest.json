@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/powerpuff-girls/static/css/main.8aec3086.chunk.css",
-    "main.js": "/powerpuff-girls/static/js/main.d815f997.chunk.js",
-    "main.js.map": "/powerpuff-girls/static/js/main.d815f997.chunk.js.map",
+    "main.js": "/powerpuff-girls/static/js/main.796ad324.chunk.js",
+    "main.js.map": "/powerpuff-girls/static/js/main.796ad324.chunk.js.map",
     "runtime-main.js": "/powerpuff-girls/static/js/runtime-main.4227c071.js",
     "runtime-main.js.map": "/powerpuff-girls/static/js/runtime-main.4227c071.js.map",
     "static/js/2.7218d26c.chunk.js": "/powerpuff-girls/static/js/2.7218d26c.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.4227c071.js",
     "static/js/2.7218d26c.chunk.js",
     "static/css/main.8aec3086.chunk.css",
-    "static/js/main.d815f997.chunk.js"
+    "static/js/main.796ad324.chunk.js"
   ]
 }
