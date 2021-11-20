@@ -5,7 +5,11 @@ import styles from './details.module.css';
 export const Details = ({ details: { name, image, airdate, premiered, summary } }) => (
   <article className={styles.article}>
     <div className={styles.imageWrapper}>
-      <img alt={name} className={styles.preview} src={image?.medium} />
+      <img
+        alt={name}
+        className={styles.preview}
+        src={image?.medium ?? 'https://via.placeholder.com/250x140'}
+      />
       <time className={styles.time}>{airdate || premiered}</time>
     </div>
     <div className={styles.description}>

@@ -5,6 +5,6 @@ import { Footer } from './footer';
 describe('Footer component', () => {
   it('is expected to render the title', () => {
     render(<Footer />);
-    expect(screen.getByText(/Created by Artur Voloshyn/i)).toBeInTheDocument();
+    expect(screen.getByText(/Created with love/i)).toBeInTheDocument();
   });
 });
